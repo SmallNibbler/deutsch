@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deutsch - Dictionary</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../styles/dictionary.css"/>
+  <script type="module" src="../src/dictionary.js"></script>
+</head>
+<body>
+  <div id="cards-container" class="cards-container">
+    <!-- Пример карточки со словом -->
+    <template id="card-template">
+      <div class="card">
+        <div class="card-content">
+          <span class="word">Hello</span>
+          <span class="translation">Привет</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress" style="width: 0%;"></div>
+        </div>
+      </div>
+    </template>
+  </div>
+
+  <!-- Фиксированное навигационное меню -->
+  <div class="fixed-nav">
+    <a href="index.html" title="Главная">✎</a>
+    <a href="dictionary.html" title="Словарь">📖</a>
+    <a href="#" id="openModal" title="Добавить слово">➕</a>
+  </div>
+
+  <!-- Модальное окно для добавления/редактирования слова -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2 id="modalTitle">Добавить слово</h2>
+      <form id="wordForm">
+        <div class="form-group">
+          <label for="newWord">Слово:</label>
+          <input type="text" id="newWord" name="newWord" placeholder="Введите слово">
+        </div>
+        <div class="form-group">
+          <label for="newTranslation">Перевод:</label>
+          <input type="text" id="newTranslation" name="newTranslation" placeholder="Введите перевод">
+        </div>
+        <button type="submit" id="saveBtn">Сохранить</button>
+        <button type="button" id="deleteBtn">Удалить</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

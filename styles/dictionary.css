@@ -1,0 +1,163 @@
+/* Сброс базовых стилей */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+}
+body {
+  background-color: #121212; /* Тёмный фон страницы */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #E0E0E0;
+  padding-bottom: 80px; /* Отступ снизу для фиксированного меню */
+}
+/* Контейнер для карточек */
+.cards-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+/* Карточка */
+.card {
+  background-color: #1E1E1E;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+/* Контент карточки: слово и перевод расположены горизонтально */
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+.word {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.translation {
+  font-size: 1.5em;
+  color: #00aaff; /* Акцентный цвет для перевода */
+}
+/* Прогресс-бар */
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #333;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress {
+  height: 100%;
+  background-color: #00aaff;
+  width: 50%; /* Ширина может задаваться инлайн для каждого слова */
+  transition: width 0.3s ease;
+}
+/* Фиксированное навигационное меню */
+.fixed-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+.fixed-nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #E0E0E0;
+  background-color: #1E1E1E;
+  border: 1px solid #333;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.fixed-nav a:hover {
+  background-color: #333;
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
+  padding: 20px;
+}
+.modal-content {
+  background-color: #1E1E1E;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.modal-content h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.modal-content .form-group {
+  margin-bottom: 15px;
+}
+.modal-content label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1em;
+}
+.modal-content input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #2C2C2C;
+  color: #E0E0E0;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+.modal-content input[type="text"]:focus {
+  border-color: #00aaff;
+}
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  background-color: #00aaff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.modal-content button:hover {
+  background-color: #0091cc;
+}
+#deleteBtn {
+  margin-top: 10px;
+  background-color: #C94C66;
+  display: none;
+}
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5em;
+  color: #E0E0E0;
+  cursor: pointer;
+}
